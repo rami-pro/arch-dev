@@ -1,8 +1,11 @@
 import React from "react";
+import Lottie from "react-lottie";
 import { Link } from "react-router-dom";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Grid, Typography, IconButton, useMediaQuery } from "@material-ui/core";
 
+import documentsAnimation from "../../animations/documentsAnimation/data";
+import scaleAnimation from "../../animations/scaleAnimation/data";
 import backArrow from "../../assets/backArrow.svg";
 import forwardArrow from "../../assets/forwardArrow.svg";
 import lightBulb from "../../assets/bulb.svg";
@@ -38,12 +41,33 @@ const useStyles = makeStyles((theme) => ({
     height: "4em",
     marginBottom: "2em",
   },
+  itemContainer: {
+    maxWidth: "40em",
+  },
 }));
 
 export default function CustomSoftware() {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const documentsOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: documentsAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const scaleOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: scaleAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   return (
     <Grid container direction="column">
@@ -166,6 +190,61 @@ export default function CustomSoftware() {
                   </Grid>
                 </Grid>
               </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item container direction="row" className={classes.mainContainer}>
+        <Grid item container className={classes.itemContainer}>
+          <Grid item container direction="column" md>
+            <Grid item>
+              <Typography variant="h4">Digital Documents & Data</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Adipisci maxime consequuntur asperiores optio porro minima
+                repudiandae ducimus corrupti!
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+                veritatis fugiat ab?
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item md>
+            <Typography variant="body1" paragraph>
+              <Lottie options={documentsOptions} isStopped={true} />
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          container
+          className={classes.itemContainer}
+          style={{ marginLeft: "auto", textAlign: "right" }}
+        >
+          <Grid item md>
+            <Typography variant="body1" paragraph>
+              <Lottie options={scaleOptions} />
+            </Typography>
+          </Grid>
+          <Grid item container direction="column" md>
+            <Grid item>
+              <Typography variant="h4">Scale</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Adipisci maxime consequuntur asperiores optio porro minima
+                repudiandae ducimus corrupti!
+              </Typography>
             </Grid>
           </Grid>
         </Grid>
