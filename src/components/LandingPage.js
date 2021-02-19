@@ -413,7 +413,7 @@ function LandingPage() {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item style={{ height: "80vh", marginBottom: "2em" }}>
+      <Grid item style={{ height: "80vh" }}>
         <CallToAction />
       </Grid>
     </Grid>
