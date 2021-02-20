@@ -50,6 +50,7 @@ export default function CustomSoftware() {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
   const documentsOptions = {
     loop: true,
@@ -194,8 +195,23 @@ export default function CustomSoftware() {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item container direction="row" className={classes.mainContainer}>
-        <Grid item container className={classes.itemContainer}>
+      <Grid
+        item
+        container
+        direction="row"
+        justiffy="space-around"
+        className={classes.mainContainer}
+      >
+        <Grid
+          item
+          container
+          className={classes.itemContainer}
+          style={{
+            marginLeft: matchesMD ? "auto" : undefined,
+            marginRight: matchesMD ? "auto" : undefined,
+            marginBottom: "4em",
+          }}
+        >
           <Grid item container direction="column" md>
             <Grid item>
               <Typography variant="h4">Digital Documents & Data</Typography>
@@ -216,21 +232,25 @@ export default function CustomSoftware() {
             </Grid>
           </Grid>
           <Grid item md>
-            <Typography variant="body1" paragraph>
+            <div>
               <Lottie options={documentsOptions} isStopped={true} />
-            </Typography>
+            </div>
           </Grid>
         </Grid>
         <Grid
           item
           container
           className={classes.itemContainer}
-          style={{ marginLeft: "auto", textAlign: "right" }}
+          style={{
+            marginLeft: "auto",
+            marginRight: matchesMD ? "auto" : undefined,
+            textAlign: matchesMD ? "left" : "right",
+          }}
         >
           <Grid item md>
-            <Typography variant="body1" paragraph>
+            <div>
               <Lottie options={scaleOptions} />
-            </Typography>
+            </div>
           </Grid>
           <Grid item container direction="column" md>
             <Grid item>
