@@ -6,6 +6,9 @@ import { Grid, Typography, IconButton, useMediaQuery } from "@material-ui/core";
 
 import documentsAnimation from "../../animations/documentsAnimation/data";
 import scaleAnimation from "../../animations/scaleAnimation/data";
+import automationAnimation from "../../animations/automationAnimation/data";
+import uxAnimation from "../../animations/uxAnimation/data";
+
 import backArrow from "../../assets/backArrow.svg";
 import forwardArrow from "../../assets/forwardArrow.svg";
 import lightBulb from "../../assets/bulb.svg";
@@ -66,6 +69,22 @@ export default function CustomSoftware() {
     loop: true,
     autoplay: true,
     animationData: scaleAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const automationOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: automationAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const uxOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: uxAnimation,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -202,6 +221,7 @@ export default function CustomSoftware() {
         direction="row"
         justiffy="space-around"
         className={classes.mainContainer}
+        style={{ paddingBottom: "2em" }}
       >
         <Grid
           item
@@ -293,6 +313,83 @@ export default function CustomSoftware() {
               maxime consequuntur asperiores optio porro minima repudiandae
               ducimus corrupti!
             </Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        justiffy="space-around"
+        className={classes.mainContainer}
+      >
+        <Grid
+          item
+          container
+          className={classes.itemContainer}
+          style={{
+            marginLeft: matchesMD ? "auto" : undefined,
+            marginRight: matchesMD ? "auto" : undefined,
+            marginBottom: "4em",
+          }}
+        >
+          <Grid item container direction="column" md>
+            <Grid item>
+              <Typography variant="h4">Automation</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Adipisci maxime consequuntur asperiores optio porro minima
+                repudiandae ducimus corrupti!
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+                veritatis fugiat ab?
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item md>
+            <div>
+              <Lottie options={automationOptions} isStopped={true} />
+            </div>
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          container
+          className={classes.itemContainer}
+          style={{
+            marginLeft: "auto",
+            marginRight: matchesMD ? "auto" : undefined,
+            textAlign: matchesMD ? "left" : "right",
+          }}
+        >
+          <Grid item md>
+            <div>
+              <Lottie
+                options={uxOptions}
+                style={{ maxHeight: 310, maxWidth: 155 }}
+              />
+            </div>
+          </Grid>
+          <Grid item container direction="column" md>
+            <Grid item>
+              <Typography variant="h4">User Experience</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Adipisci maxime consequuntur asperiores optio porro minima
+                repudiandae ducimus corrupti!
+              </Typography>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
