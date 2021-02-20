@@ -11,6 +11,7 @@ import forwardArrow from "../../assets/forwardArrow.svg";
 import lightBulb from "../../assets/bulb.svg";
 import cash from "../../assets/cash.svg";
 import stopwatch from "../../assets/stopwatch.svg";
+import roots from "../../assets/root.svg";
 
 const useStyles = makeStyles((theme) => ({
   arrowContainer: {
@@ -266,6 +267,32 @@ export default function CustomSoftware() {
                 repudiandae ducimus corrupti!
               </Typography>
             </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item container direction="row">
+        <Grid item container direction="column" alignItems="center">
+          <Grid item>
+            <img
+              src={roots}
+              alt="a tree with roots all around"
+              height="450em"
+              width="450em"
+            />
+          </Grid>
+          <Grid item className={classes.itemContainer}>
+            <Typography variant="h4" gutterBottom>
+              Root-Cause Analysis
+            </Typography>
+            <Typography variant="body1" paragraph>
+              Lorem ipsum dolor sit amet consectetur adipisicing.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              {" "}
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+              maxime consequuntur asperiores optio porro minima repudiandae
+              ducimus corrupti!
+            </Typography>
           </Grid>
         </Grid>
       </Grid>
