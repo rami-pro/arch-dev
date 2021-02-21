@@ -334,12 +334,7 @@ export default function CustomSoftware() {
           </Grid>
         </Grid>
       </Grid>
-      <Grid
-        item
-        container
-        direction="row"
-        style={{ marginBottom: matchesSM ? "10em" : undefined }}
-      >
+      <Grid item container direction="row" style={{ marginBottom: "10em" }}>
         <Grid item container direction="column" alignItems="center">
           <Grid item>
             <img
