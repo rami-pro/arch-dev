@@ -2,7 +2,13 @@ import React from "react";
 import Lottie from "react-lottie";
 import { Link } from "react-router-dom";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Grid, Typography, IconButton, useMediaQuery } from "@material-ui/core";
+import {
+  Grid,
+  Typography,
+  IconButton,
+  useMediaQuery,
+  Hidden,
+} from "@material-ui/core";
 
 import documentsAnimation from "../../animations/documentsAnimation/data";
 import scaleAnimation from "../../animations/scaleAnimation/data";
@@ -26,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "2em",
     paddingBottom: "5em",
     [theme.breakpoints.down("sm")]: {
-      paddingLeft: "0em",
-      paddingRight: "0em",
+      paddingLeft: "1em",
+      paddingRight: "1em",
       paddingTop: "1em",
       paddingBottom: "3em",
     },
@@ -47,6 +53,21 @@ const useStyles = makeStyles((theme) => ({
   },
   itemContainer: {
     maxWidth: "40em",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
+  },
+  rootsImg: {
+    height: "450px",
+    width: "450px",
+    [theme.breakpoints.down("md")]: {
+      height: "350px",
+      width: "350px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "250px",
+      width: "250px",
+    },
   },
 }));
 
@@ -91,17 +112,30 @@ export default function CustomSoftware() {
   };
 
   return (
-    <Grid container direction="column">
+    <Grid
+      container
+      direction="column"
+      className={classes.mainContainer}
+      style={{ maxWidth: "100%" }}
+    >
       <Grid item>
-        <Grid container direction="row" className={classes.mainContainer}>
-          <Grid item xs={2} className={classes.arrowContainer}>
-            <IconButton component={Link} to="/services">
-              <img src={backArrow} alt="forward arrow" />
-            </IconButton>
-          </Grid>
+        <Grid
+          container
+          direction="row"
+          style={{ marginBottom: matchesSM ? "10em" : undefined }}
+        >
+          <Hidden smDown>
+            <Grid item sm={2} className={classes.arrowContainer}>
+              <IconButton component={Link} to="/services">
+                <img src={backArrow} alt="forward arrow" />
+              </IconButton>
+            </Grid>
+          </Hidden>
           <Grid
             item
-            xs={matchesSM ? 8 : 6}
+            xs={10}
+            sm={8}
+            md={6}
             className={classes.descriptionContainer}
           >
             <Grid container direction="column">
@@ -133,23 +167,30 @@ export default function CustomSoftware() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid
-            item
-            xs={2}
-            className={classes.arrowContainer}
-            style={{
-              marginLeft: "auto",
-              textAlign: "right",
-            }}
-          >
-            <IconButton component={Link} to="/mobileapps">
-              <img src={forwardArrow} alt="forward arrow" />
-            </IconButton>
-          </Grid>
+          <Hidden smDown>
+            <Grid
+              item
+              sm={2}
+              className={classes.arrowContainer}
+              style={{
+                marginLeft: "auto",
+                textAlign: "right",
+              }}
+            >
+              <IconButton component={Link} to="/mobileapps">
+                <img src={forwardArrow} alt="forward arrow" />
+              </IconButton>
+            </Grid>
+          </Hidden>
         </Grid>
       </Grid>
       <Grid item>
-        <Grid container direction="row" justify="center">
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          style={{ marginBottom: matchesSM ? "10em" : undefined }}
+        >
           <Grid item xs={8}>
             <Grid container justify="center">
               <Grid item>
@@ -220,8 +261,10 @@ export default function CustomSoftware() {
         container
         direction="row"
         justiffy="space-around"
-        className={classes.mainContainer}
-        style={{ paddingBottom: "2em" }}
+        style={{
+          paddingBottom: "2em",
+          marginBottom: matchesSM ? "10em" : undefined,
+        }}
       >
         <Grid
           item
@@ -254,7 +297,7 @@ export default function CustomSoftware() {
           </Grid>
           <Grid item md>
             <div>
-              <Lottie options={documentsOptions} isStopped={true} />
+              <Lottie options={documentsOptions} />
             </div>
           </Grid>
         </Grid>
@@ -265,7 +308,8 @@ export default function CustomSoftware() {
           style={{
             marginLeft: "auto",
             marginRight: matchesMD ? "auto" : undefined,
-            textAlign: matchesMD ? "left" : "right",
+            marginBottom: "4em",
+            textAlign: matchesMD ? "center" : "right",
           }}
         >
           <Grid item md>
@@ -290,14 +334,18 @@ export default function CustomSoftware() {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item container direction="row">
+      <Grid
+        item
+        container
+        direction="row"
+        style={{ marginBottom: matchesSM ? "10em" : undefined }}
+      >
         <Grid item container direction="column" alignItems="center">
           <Grid item>
             <img
               src={roots}
               alt="a tree with roots all around"
-              height="450em"
-              width="450em"
+              className={classes.rootsImg}
             />
           </Grid>
           <Grid item className={classes.itemContainer}>
@@ -321,7 +369,7 @@ export default function CustomSoftware() {
         container
         direction="row"
         justiffy="space-around"
-        className={classes.mainContainer}
+        style={{ marginBottom: matchesSM ? "10em" : undefined }}
       >
         <Grid
           item
@@ -354,7 +402,7 @@ export default function CustomSoftware() {
           </Grid>
           <Grid item md>
             <div>
-              <Lottie options={automationOptions} isStopped={true} />
+              <Lottie options={automationOptions} />
             </div>
           </Grid>
         </Grid>
@@ -365,10 +413,18 @@ export default function CustomSoftware() {
           style={{
             marginLeft: "auto",
             marginRight: matchesMD ? "auto" : undefined,
-            textAlign: matchesMD ? "left" : "right",
+            marginBottom: "4em",
+            textAlign: matchesMD ? "center" : "right",
           }}
         >
-          <Grid item md>
+          <Grid
+            item
+            md
+            style={{
+              marginLeft: matchesMD ? "auto" : undefined,
+              marginRight: matchesMD ? "auto" : undefined,
+            }}
+          >
             <div>
               <Lottie
                 options={uxOptions}
