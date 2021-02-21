@@ -5,6 +5,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
+import CallToAction from "./ui/CallToAction";
 
 import theme from "./ui/Theme";
 import LandingPage from "./LandingPage";
@@ -23,7 +24,12 @@ function App() {
           <Route
             exact
             path="/customsoftware"
-            component={() => <CustomSoftwarePage />}
+            component={() => (
+              <>
+                <CustomSoftwarePage />
+                <CallToAction />
+              </>
+            )}
           />
           <Route
             exact
@@ -31,7 +37,16 @@ function App() {
             component={() => <div>Mobile Apps</div>}
           />
           <Route exact path="/websites" component={() => <div>Websites</div>} />
-          <Route exact path="/services" component={() => <ServicesPage />} />
+          <Route
+            exact
+            path="/services"
+            component={() => (
+              <>
+                <ServicesPage />
+                <CallToAction />
+              </>
+            )}
+          />
           <Route
             exact
             path="/revolution"
