@@ -1,5 +1,5 @@
 import React from "react";
-//import Lottie from "react-lottie";
+import Lottie from "react-lottie";
 import { Link } from "react-router-dom";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
@@ -12,6 +12,7 @@ import {
 
 import backArrow from "../../assets/backArrow.svg";
 import forwardArrow from "../../assets/forwardArrow.svg";
+import integrationAnimation from "../../animations/integrationAnimation/data.json";
 
 const useStyles = makeStyles((theme) => ({
   arrowContainer: {
@@ -47,6 +48,15 @@ export default function MobileApps() {
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   //const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: integrationAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <Grid
       container
@@ -62,7 +72,7 @@ export default function MobileApps() {
         >
           <Hidden smDown>
             <Grid item sm={2} className={classes.arrowContainer}>
-              <IconButton component={Link} to="/services">
+              <IconButton component={Link} to="/customSoftware">
                 <img src={backArrow} alt="forward arrow" />
               </IconButton>
             </Grid>
@@ -76,19 +86,15 @@ export default function MobileApps() {
           >
             <Grid container direction="column">
               <Grid item>
-                <Typography variant="h2">Custom Software</Typography>
+                <Typography variant="h2">
+                  IOS/Android App Development
+                </Typography>
               </Grid>
               <Grid item>
                 <Typography variant="body1" paragraph>
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Recusandae temporibus facilis similique illum tempora
                   consequuntur.
-                </Typography>
-                <Typography variant="body1" paragraph>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos,
-                  vel maiores cumque suscipit nisi consectetur aliquam obcaecati
-                  exercitationem ex sapiente dolorum expedita cupiditate
-                  reiciendis, delectus placeat velit assumenda, beatae tenetur
                 </Typography>
                 <Typography variant="body1" paragraph>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos,
@@ -113,11 +119,60 @@ export default function MobileApps() {
                 textAlign: "right",
               }}
             >
-              <IconButton component={Link} to="/mobileapps">
+              <IconButton component={Link} to="/websites">
                 <img src={forwardArrow} alt="forward arrow" />
               </IconButton>
             </Grid>
           </Hidden>
+        </Grid>
+      </Grid>
+      <Grid item>
+        <Grid
+          container
+          direction="row"
+          style={{ marginBottom: matchesSM ? "10em" : undefined }}
+        >
+          <Grid item container direction="column" md style={{ padding: "1em" }}>
+            <Grid item>
+              <Typography variant="h2">Integration</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Recusandae temporibus facilis similique illum tempora
+                consequuntur.
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                commodi quam delectus!.
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item md style={{ padding: "2em" }}>
+            <Lottie options={defaultOptions} />
+          </Grid>
+          <Grid
+            item
+            container
+            direction="column"
+            md
+            style={{ textAlign: "right", padding: "1em" }}
+          >
+            <Grid item>
+              <Typography variant="h2">Integration</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Recusandae temporibus facilis similique illum tempora
+                consequuntur.
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                commodi quam delectus!.
+              </Typography>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
