@@ -1,5 +1,4 @@
 import React from "react";
-import Lottie from "react-lottie";
 import { Link } from "react-router-dom";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
@@ -47,11 +46,6 @@ const useStyles = makeStyles((theme) => ({
   },
   paragraphContainer: {
     maxwidth: "30em",
-  },
-  icon: {
-    width: "auto",
-    height: "10em",
-    marginBottom: "2em",
   },
 }));
 
