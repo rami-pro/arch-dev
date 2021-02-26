@@ -79,7 +79,7 @@ export default function MobileApps() {
         <Grid container direction="row" style={{ marginBottom: "10em" }}>
           <Hidden smDown>
             <Grid item sm={2} className={classes.arrowContainer}>
-              <IconButton component={Link} to="/mobileapps">
+              <IconButton component={Link} to="/customsoftware">
                 <img src={backArrow} alt="forward arrow" />
               </IconButton>
             </Grid>
@@ -126,7 +126,7 @@ export default function MobileApps() {
                 textAlign: "right",
               }}
             >
-              <IconButton component={Link} to="/services">
+              <IconButton component={Link} to="/websites">
                 <img src={forwardArrow} alt="forward arrow" />
               </IconButton>
             </Grid>
