@@ -12,6 +12,10 @@ import {
 
 import backArrow from "../../assets/backArrow.svg";
 import forwardArrow from "../../assets/forwardArrow.svg";
+import analytics from "../../assets/analytics.svg";
+import seo from "../../assets/seo.svg";
+import outreach from "../../assets/outreach.svg";
+import ecommerce from "../../assets/ecommerce.svg";
 
 const useStyles = makeStyles((theme) => ({
   arrowContainer: {
@@ -41,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
   },
+  paragraphContainer: {
+    maxwidth: "30em",
+  },
   icon: {
     width: "auto",
     height: "10em",
@@ -65,7 +72,7 @@ export default function Websites() {
         <Grid container direction="row" style={{ marginBottom: "10em" }}>
           <Hidden smDown>
             <Grid item sm={2} className={classes.arrowContainer}>
-              <IconButton component={Link} to="/customSoftware">
+              <IconButton component={Link} to="/mobileapps">
                 <img src={backArrow} alt="forward arrow" />
               </IconButton>
             </Grid>
@@ -79,9 +86,7 @@ export default function Websites() {
           >
             <Grid container direction="column">
               <Grid item>
-                <Typography variant="h2">
-                  IOS/Android App Development
-                </Typography>
+                <Typography variant="h2">Websites</Typography>
               </Grid>
               <Grid item>
                 <Typography variant="body1" paragraph>
@@ -94,10 +99,6 @@ export default function Websites() {
                   vel maiores cumque suscipit nisi consectetur aliquam obcaecati
                   exercitationem ex sapiente dolorum expedita cupiditate
                   reiciendis, delectus placeat velit assumenda, beatae tenetur
-                </Typography>
-                <Typography variant="body1" paragraph>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                  commodi quam delectus!.
                 </Typography>
               </Grid>
             </Grid>
@@ -112,11 +113,131 @@ export default function Websites() {
                 textAlign: "right",
               }}
             >
-              <IconButton component={Link} to="/websites">
+              <IconButton component={Link} to="/services">
                 <img src={forwardArrow} alt="forward arrow" />
               </IconButton>
             </Grid>
           </Hidden>
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        alignItems="center"
+        justify={matchesMD ? "center" : undefined}
+        style={{
+          marginBottom: "4em",
+          textAlign: matchesSM ? "center" : undefined,
+        }}
+      >
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item>
+              <Typography variant="h4">Analytics</Typography>
+            </Grid>
+            <Grid item>
+              <img
+                src={analytics}
+                alt="graph with 1's and 0's"
+                style={{ marginLeft: "-3em" }}
+              />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Typography variant="body1" style={{ maxWidth: "30em" }}>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, vel
+            maiores cumque suscipit nisi consectetur aliquam obcaecati
+            exercitationem ex sapiente dolorum expedita cupiditate reiciendis,
+            delectus placeat velit assumenda, beatae tenetur
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        alignItems="center"
+        justify={matchesMD ? "center" : "flex-end"}
+        style={{
+          marginBottom: "4em",
+          textAlign: matchesSM ? "center" : undefined,
+        }}
+      >
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item>
+              <Typography variant="h4">Outreach</Typography>
+            </Grid>
+            <Grid item>
+              <img style={{ padding: "1em" }} src={outreach} alt="outreach" />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Typography variant="body1" style={{ maxWidth: "30em" }}>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, vel
+            maiores cumque suscipit nisi consectetur aliquam obcaecati
+            exercitationem ex sapiente dolorum expedita cupiditate reiciendis,
+            delectus placeat velit assumenda, beatae tenetur
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        alignItems="center"
+        justify={matchesMD ? "center" : undefined}
+        style={{
+          marginBottom: "4em",
+          textAlign: matchesSM ? "center" : undefined,
+        }}
+      >
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item>
+              <Typography variant="h4">SEO</Typography>
+            </Grid>
+            <Grid item>
+              <img style={{ padding: "1em" }} src={seo} alt="seo" />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Typography variant="body1" style={{ maxWidth: "30em" }}>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, vel
+            maiores cumque suscipit nisi consectetur aliquam obcaecati
+            exercitationem ex sapiente dolorum expedita cupiditate reiciendis,
+            delectus placeat velit assumenda, beatae tenetur
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        alignItems="center"
+        justify={matchesMD ? "center" : "flex-end"}
+        style={{
+          marginBottom: "4em",
+          textAlign: matchesSM ? "center" : undefined,
+        }}
+      >
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item>
+              <Typography variant="h4">E-Commere</Typography>
+            </Grid>
+            <Grid item>
+              <img style={{ padding: "1em" }} src={ecommerce} alt="ecommerce" />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Typography variant="body1" style={{ maxWidth: "30em" }}>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, vel
+            maiores cumque suscipit nisi consectetur aliquam obcaecati
+            exercitationem ex sapiente dolorum expedita cupiditate reiciendis,
+            delectus placeat velit assumenda, beatae tenetur
+          </Typography>
         </Grid>
       </Grid>
     </Grid>
