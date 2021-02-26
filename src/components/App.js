@@ -12,6 +12,7 @@ import LandingPage from "./LandingPage";
 import ServicesPage from "./ui/Services";
 import CustomSoftwarePage from "./ui/CustomSoftware";
 import MobileAppsPage from "./ui/MobileApps";
+import WebsitesPage from "./ui/Websites";
 
 function App() {
   return (
@@ -42,7 +43,16 @@ function App() {
               </>
             )}
           />
-          <Route exact path="/websites" component={() => <div>Websites</div>} />
+          <Route
+            exact
+            path="/websites"
+            component={() => (
+              <>
+                <WebsitesPage />
+                <CallToAction />
+              </>
+            )}
+          />
           <Route
             exact
             path="/services"
