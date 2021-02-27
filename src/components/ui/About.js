@@ -23,14 +23,35 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.5em",
     lineHeight: 1.4,
   },
+  captionImg: {
+    [theme.breakpoints.down("md")]: {
+      maxHeight: "250px",
+      maxWidth: "250px",
+    },
+  },
   avatar: {
     height: "25em",
     width: "25em",
+    [theme.breakpoints.down("lg")]: {
+      height: "20em",
+      width: "20em",
+    },
+    [theme.breakpoints.down("md")]: {
+      height: "15em",
+      width: "15em",
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "12em",
+      width: "12em",
+    },
   },
 }));
 
 function About() {
   const classes = useStyles();
+  const theme = useTheme();
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Grid container direction="column">
       <Grid item className={classes.rowContainer} style={{ marginTop: "2em" }}>
@@ -61,7 +82,14 @@ function About() {
         className={classes.rowContainer}
         style={{ marginBottom: "10em" }}
       >
-        <Grid item container md direction="column" style={{ maxWidth: "35em" }}>
+        <Grid
+          item
+          container
+          md
+          direction="column"
+          alignItems="center"
+          style={{ maxWidth: "35em" }}
+        >
           <Grid item>
             <Typography variant="h2">History</Typography>
           </Grid>
@@ -93,7 +121,10 @@ function About() {
           <img
             src={history}
             alt="qui pen setting on top of a book"
-            style={{ maxHeight: "22em" }}
+            style={{
+              maxHeight: "22em",
+              width: matchesMD ? "250px" : undefined,
+            }}
           />
         </Grid>
       </Grid>
@@ -117,12 +148,17 @@ function About() {
         <Grid
           item
           container
+          justify="center"
           className={classes.rowContainer}
           style={{ marginBottom: "10em" }}
         >
           <Grid item conntainer lg direction="column">
             <Grid item>
-              <img src={yearbook} alt="yearbook page about the founder" />
+              <img
+                src={yearbook}
+                className={classes.captionImg}
+                alt="yearbook page about the founder"
+              />
             </Grid>
             <Grid item>
               <Typography variant="caption" paragraph>
@@ -142,14 +178,20 @@ function About() {
               porro minima repudiandae ducimus.
             </Typography>
           </Grid>
-          <Grid item container direction="column" lg>
-            <Grid item>
-              <img src={puppy} alt="grey spotted puppy" />
-            </Grid>
-            <Grid item>
-              <Typography variant="caption">
-                adipisicing elit. Adipisci maxime consequuntur asperiores.
-              </Typography>
+          <Grid item lg>
+            <Grid container direction="column">
+              <Grid item>
+                <img
+                  src={puppy}
+                  className={classes.captionImg}
+                  alt="grey spotted puppy"
+                />
+              </Grid>
+              <Grid item>
+                <Typography variant="caption">
+                  adipisicing elit. Adipisci maxime.
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
