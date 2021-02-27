@@ -85,7 +85,7 @@ function Revolution() {
           <img
             src={vision}
             alt="mountains through binoculars"
-            style={{ maxWidth: "40em" }}
+            style={{ maxWidth: "40em", width: matchesMD ? "250px" : undefined }}
           />
         </Grid>
         <Grid
@@ -253,7 +253,7 @@ function Revolution() {
           <img
             src={consultation}
             alt="handshake"
-            style={{ maxWidth: "40em" }}
+            style={{ maxWidth: "40em", width: matchesMD ? "250px" : undefined }}
           />
         </Grid>
       </Grid>
@@ -316,7 +316,7 @@ function Revolution() {
           <img
             src={mockup}
             alt="basic website design"
-            style={{ maxWidth: "40em" }}
+            style={{ maxWidth: "40em", width: matchesMD ? "250px" : undefined }}
           />
         </Grid>
       </Grid>
@@ -376,7 +376,11 @@ function Revolution() {
         </Grid>
 
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src={review} alt="magnifying glass" />
+          <img
+            src={review}
+            alt="magnifying glass"
+            style={{ width: matchesMD ? "250px" : undefined }}
+          />
         </Grid>
       </Grid>
       <Grid
@@ -438,7 +442,7 @@ function Revolution() {
           <img
             src={design}
             alt="paint brush leaving a stroke of paint"
-            style={{ maxWidth: "40em" }}
+            style={{ maxWidth: "40em", width: matchesMD ? "250px" : undefined }}
           />
         </Grid>
       </Grid>
@@ -501,7 +505,7 @@ function Revolution() {
           <img
             src={build}
             alt="Building construction site"
-            style={{ maxWidth: "40em" }}
+            style={{ maxWidth: "40em", width: matchesMD ? "250px" : undefined }}
           />
         </Grid>
       </Grid>
@@ -561,7 +565,11 @@ function Revolution() {
         </Grid>
 
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src={launch} alt="space ship" style={{ maxWidth: "40em" }} />
+          <img
+            src={launch}
+            alt="space ship"
+            style={{ maxWidth: "40em", width: matchesMD ? "250px" : undefined }}
+          />
         </Grid>
       </Grid>
       <Grid
@@ -623,7 +631,7 @@ function Revolution() {
           <img
             src={maintain}
             alt="wrench tightening bolts"
-            style={{ maxWidth: "40em" }}
+            style={{ maxWidth: "40em", width: matchesMD ? "250px" : undefined }}
           />
         </Grid>
       </Grid>
@@ -686,7 +694,7 @@ function Revolution() {
           <img
             src={iterate}
             alt="falling dominos"
-            style={{ maxWidth: "40em" }}
+            style={{ maxWidth: "40em", width: matchesMD ? "250px" : undefined }}
           />
         </Grid>
       </Grid>
