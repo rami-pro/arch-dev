@@ -3,6 +3,9 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Grid, Typography, Avatar, useMediaQuery } from "@material-ui/core";
 
 import history from "../../assets/history.svg";
+import puppy from "../../assets/puppy.svg";
+import founder from "../../assets/founder.jpg";
+import yearbook from "../../assets/yearbook.svg";
 
 const useStyles = makeStyles((theme) => ({
   rowContainer: {
@@ -19,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "50em",
     fontSize: "1.5em",
     lineHeight: 1.4,
+  },
+  avatar: {
+    height: "25em",
+    width: "25em",
   },
 }));
 
@@ -90,19 +97,61 @@ function About() {
           />
         </Grid>
       </Grid>
-      <Grid item container direction="column">
+      <Grid item container direction="column" alignItems="center">
         <Grid item>
-          <Typography variant="h4" align="center">
-            History
+          <Typography variant="h4" gutterBottom align="center">
+            Team
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="body1" align="center">
+          <Typography variant="body1" paragraph align="center">
             Bob martin, Founder
           </Typography>
-          <Typography variant="body1" align="center">
+          <Typography variant="body1" paragraph align="center">
             I started coding when I was 9 years old
           </Typography>
+        </Grid>
+        <Grid item style={{ marginBottom: "2em" }}>
+          <Avatar src={founder} alt="founder" className={classes.avatar} />
+        </Grid>
+        <Grid
+          item
+          container
+          className={classes.rowContainer}
+          style={{ marginBottom: "10em" }}
+        >
+          <Grid item conntainer lg direction="column">
+            <Grid item>
+              <img src={yearbook} alt="yearbook page about the founder" />
+            </Grid>
+            <Grid item>
+              <Typography variant="caption" paragraph>
+                a page from my sophomore yearbook
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item lg style={{ padding: "2em", maxWidth: "45em" }}>
+            <Typography variant="body1" paragraph>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
+              maxime consequuntur ducimus corrupti! it amet consectetur
+              adipisicing elit. Adipisci maxime consequuntur asperiores optio
+              porro minima.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              adipisicing elit. Adipisci maxime consequuntur asperiores optio
+              porro minima repudiandae ducimus.
+            </Typography>
+          </Grid>
+          <Grid item container direction="column" lg>
+            <Grid item>
+              <img src={puppy} alt="grey spotted puppy" />
+            </Grid>
+            <Grid item>
+              <Typography variant="caption">
+                adipisicing elit. Adipisci maxime consequuntur asperiores.
+              </Typography>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
