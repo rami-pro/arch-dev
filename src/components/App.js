@@ -13,6 +13,7 @@ import ServicesPage from "./ui/Services";
 import CustomSoftwarePage from "./ui/CustomSoftware";
 import MobileAppsPage from "./ui/MobileApps";
 import WebsitesPage from "./ui/Websites";
+import RevolutionPage from "./ui/Revolution";
 
 function App() {
   return (
@@ -66,7 +67,12 @@ function App() {
           <Route
             exact
             path="/revolution"
-            component={() => <div>Revolution</div>}
+            component={() => (
+              <>
+                <RevolutionPage />
+                <CallToAction />
+              </>
+            )}
           />
           <Route exact path="/about" component={() => <div>About</div>} />
           <Route exact path="/contact" component={() => <div>Contact</div>} />
