@@ -14,6 +14,7 @@ import CustomSoftwarePage from "./ui/CustomSoftware";
 import MobileAppsPage from "./ui/MobileApps";
 import WebsitesPage from "./ui/Websites";
 import RevolutionPage from "./ui/Revolution";
+import AboutPage from "./ui/About";
 
 function App() {
   return (
@@ -74,7 +75,16 @@ function App() {
               </>
             )}
           />
-          <Route exact path="/about" component={() => <div>About</div>} />
+          <Route
+            exact
+            path="/about"
+            component={() => (
+              <>
+                <AboutPage />
+                <CallToAction />
+              </>
+            )}
+          />
           <Route exact path="/contact" component={() => <div>Contact</div>} />
           <Route exact path="/estimate" component={() => <div>Estimate</div>} />
         </Switch>
