@@ -63,6 +63,11 @@ export default createMuiTheme({
       textTransform: "none",
       color: "white",
     },
+    caption: {
+      fontSize: "1rem",
+      fontWeight: 300,
+      color: arcGrey,
+    },
     learnMoreButton: {
       fontFamily: "Roboto",
       fontWeight: "bold",
