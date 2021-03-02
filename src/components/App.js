@@ -15,6 +15,7 @@ import MobileAppsPage from "./ui/MobileApps";
 import WebsitesPage from "./ui/Websites";
 import RevolutionPage from "./ui/Revolution";
 import AboutPage from "./ui/About";
+import ContactPage from "./ui/Contact";
 
 function App() {
   return (
@@ -85,7 +86,15 @@ function App() {
               </>
             )}
           />
-          <Route exact path="/contact" component={() => <div>Contact</div>} />
+          <Route
+            exact
+            path="/contact"
+            component={() => (
+              <>
+                <ContactPage />
+              </>
+            )}
+          />
           <Route exact path="/estimate" component={() => <div>Estimate</div>} />
         </Switch>
         <Footer />
