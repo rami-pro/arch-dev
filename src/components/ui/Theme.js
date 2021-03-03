@@ -17,6 +17,28 @@ export default createMuiTheme({
       main: `${arcOrange}`,
     },
   },
+  overrides: {
+    MuiInputLabel: {
+      root: {
+        color: arcBlue,
+        fontSize: "1rem",
+      },
+    },
+    MuiInput: {
+      root: {
+        color: arcGrey,
+        fontWeight: 300,
+      },
+      underline: {
+        "&:before": {
+          borderBottom: `2px solid ${arcBlue}`,
+        },
+        "&:hover:not($disabled):not($focused):not($error):before": {
+          borderBottom: `2px solid ${arcBlue}`,
+        },
+      },
+    },
+  },
   typography: {
     tab: {
       textTransform: "none",
@@ -75,28 +97,6 @@ export default createMuiTheme({
       borderWidth: 2,
       borderRadius: 50,
       borderColor: arcBlue,
-    },
-    overrides: {
-      MuiInputLabel: {
-        root: {
-          color: arcBlue,
-          fontSize: "1rem",
-        },
-      },
-      MuiInput: {
-        root: {
-          color: arcGrey,
-          fontWeight: 300,
-        },
-        underline: {
-          "&:before": {
-            borderBottom: `2px solid ${arcBlue}`,
-          },
-          "&:hover:not($disabled):not($focused):not($error):before": {
-            borderBottom: `2px solid ${arcBlue}`,
-          },
-        },
-      },
     },
   },
 });
