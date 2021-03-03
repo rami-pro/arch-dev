@@ -287,25 +287,13 @@ function Contact(props) {
         style={{ zIndex: 1302 }}
         open={open}
         fullScreen={matchesSM}
+        fullWidth={matchesSM ? undefined : true}
+        maxWidth={matchesSM ? undefined : "sm"}
         onClose={() => setOpen(false)}
         PaperProps={{
           style: {
             paddingTop: matchesXS ? "1em" : "5em",
             paddingBottom: matchesXS ? "1em" : "5em",
-            paddingLeft: matchesXS
-              ? 0
-              : matchesSM
-              ? 0
-              : matchesMD
-              ? "15em"
-              : "25em",
-            paddingRight: matchesXS
-              ? 0
-              : matchesSM
-              ? 0
-              : matchesMD
-              ? "15em"
-              : "25em",
           },
         }}
       >
@@ -348,7 +336,7 @@ function Contact(props) {
               />
             </Grid>
           </Grid>
-          <Grid item style={{ width: matchesSM ? "100%" : "20em" }}>
+          <Grid item>
             <TextField
               InputProps={{ disableUnderline: true }}
               value={message}
